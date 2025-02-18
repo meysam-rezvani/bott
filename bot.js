@@ -3,7 +3,7 @@ const moment = require('moment-jalaali');
 
 
 const token = "7930873100:AAE1USB6Sg-eHsMbsWZo7fQMraeF9MzIhC0";
-const chatId = "dfgbr";
+const chatId = "";
 
 const bot = new TelegramBot(token, { polling: true });
 
@@ -21,7 +21,3 @@ function sendDailyCalendar(chatId) {
 const schedule = require('node-schedule');
 schedule.scheduleJob('0 8 * * *', () => sendDailyCalendar(chatId));
 
-// پاسخ به پیام‌های ارسال شده به ربات
-bot.on('message', (msg) => {
-    sendDailyCalendar(msg.chat.id);
-});
